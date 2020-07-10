@@ -26,6 +26,10 @@ h5,
 h6 {
   margin-bottom: 0;
 }
-
-// font-family: 'Ovo', serif;
-// font-family: 'Playfair Display', serif;
+p {
+  margin-bottom: 0;
+}
+a:focus,
+:active {
+  outline: none;
+}

@@ -1,9 +1,7 @@
 .header {
    background: linear-gradient(180deg, rgba(58, 58, 58, 0.35) 0%, rgba(58, 58, 58, 1) 60%),
       url("../img/bacground.png") no-repeat center/cover;
-   // background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(58, 58, 58, 0.6) 50%, rgba(58, 58, 58, 1) 100%),
-   //    url("../img/bacground.png") no-repeat top/335%;
-   height: 100vh;
+   padding-bottom: 43px;
 
    &__navigation {
       display: flex;
@@ -71,7 +69,7 @@
 
    &__text {
       min-width: 272px;
-      height: 95px;
+      height: auto;
       padding: 0;
       margin-top: 26px;
 
@@ -89,12 +87,6 @@
          max-width: 17px;
          max-height: 23px;
       }
-
-      .active {
-         img {
-            transform: rotate(180deg);
-         }
-      }
    }
 }
 button {
@@ -102,16 +94,13 @@ button {
 }
 .more {
    display: none;
-   .active {
-      display: block;
+}
+.active {
+   display: block;
+   img {
+      transform: rotate(180deg);
    }
 }
-
-.text-center {
-}
-.justify-content-center {
-}
-
 .header__button.active > span {
    transform: rotate(45deg);
 }
@@ -141,11 +130,10 @@ button {
    content: "";
    top: 5px;
 }
-
 .form {
    border-radius: 5px;
    background-color: #000;
-   margin: 51px 0 0 0;
+   margin: 0 auto;
    justify-content: center;
    align-items: center;
    padding: 28px 18px 30px;
@@ -190,5 +178,29 @@ input {
    &::placeholder {
       color: #fff;
       line-height: 36px;
+   }
+}
+.form-control {
+   margin-bottom: 17px;
+   min-width: 252px;
+   max-width: 324px;
+   width: 100%;
+   color: #fff;
+   background: #454545;
+   border: 1px solid #454545;
+   border-radius: 3px;
+   padding: 10px 10px 10px 21px;
+   @include adaptive-font(24, 16, 400);
+   line-height: 24px;
+   &::placeholder {
+      background: #454545;
+   }
+}
+select {
+   option {
+      color: #fff;
+      background: #454545;
+      @include adaptive-font(24, 16, 400);
+      line-height: 24px;
    }
 }
