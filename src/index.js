@@ -1,14 +1,6 @@
 (function ($) {
    let textMore = $(".more");
    let btn = $(".header__arrow");
-   let arrowLeft = $(".left");
-   let arrowRight = $(".right");
-
-   $(arrowLeft).on("click", function () {
-   });
-
-   $(arrowRight).on("click", function () {
-   });
 
    $(btn).on("click", function () {
       textMore.toggleClass("active");
@@ -18,13 +10,15 @@
 })(jQuery);
 
 $(document).ready(function () {
-   $(".slider").slick( {
+   $(".slider").slick({
       slidesToShow: 1,
       adaptiveHeight: true,
-      speed: 1000
+      speed: 1000,
+      centerMode: true,
+      variableWidth: true
    });
 
-   $(".slider").on('afterChange', function(event, slick, currentSlide){
+   $(".slider").on('afterChange', function (event, slick, currentSlide) {
       $("#cp").text(currentSlide + 1);
    });
 

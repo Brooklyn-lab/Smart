@@ -15,59 +15,81 @@
 <body>
   <header class="header text-center justify-content-center">
     <div class="container">
-      <div class="header__navigation row">
-        <div class="header__logo col-6">
-          <img src="./img/logo_nav.png" alt="Smart">
+      <div class="row">
+        <div class="header__wrapper col-12">
+          <div class="header__logo">
+            <img src="./img/logo_nav.png" alt="Smart">
+          </div>
+          <div class="header__burger col-2">
+            <div class="header__owerlay"></div>
+            <div class="header__button">
+              <span></span>
+            </div>
+          </div>
+          <nav class="header__nav nav">
+            <ul class="nav__body">
+              <li class="nav__item"><a class="nav__link activeLink" href="#" :active>Home</a></li>
+              <li class="nav__item"><a class="nav__link" href="#">About Us</a></li>
+              <li class="nav__item"><a class="nav__link" href="#">Blog</a></li>
+            </ul>
+          </nav>
+          <label class="header__btn button" for="btnForm"><span>Order Now</span></label>
+          <button class="buttonOff" type="button" id="btnForm"></button>
         </div>
-        <div class="header__burger col-2">
-          <div class="header__owerlay"></div>
-          <div class="header__button">
-            <span></span>
+        <div class="header__title row">
+          <div class="header__content col-10 offset-1 col-lg-8 offset-lg-2">
+            <h1>
+              Lorem ipsum dolor sit amet, consectetur
+            </h1>
+          </div>
+          <div class="header__text col-10 offset-1 col-lg-6 offset-lg-3">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad <span class="more">minim veniam, quis nostrud exercitation ullamco laboris
+                nisi
+                ut
+                aliquip ex
+                ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                mollit
+                anim id est laborum.</span>
+            </p>
+            <label class="header__arrow" for="btn"><img class="" src="./img/down_section1.png" alt="More"></label>
+            <button class="buttonOff" type="button" id="btn"></button>
+          </div>
+        </div>
+        <div class="header__form row">
+          <div class="form__wrapper form col-12">
+            <form action="#" class="form__body col-12">
+              <h6 class="form__title">
+                Place your order
+              </h6>
+              <div class="form__inputs">
+                <input class="form__email" type="email" name="info[email]" placeholder="Enter your email">
+                <div class="form__select">
+                  <select>
+                    <option>Essay</option>
+                    <option>Essay1</option>
+                    <option>Essay2</option>
+                  </select>
+                  <div class="form__arrow"></div>
+                </div>
+                <div class="form__select">
+                  <select>
+                    <option>275</option>
+                    <option>350</option>
+                    <option>470</option>
+                  </select>
+                  <div class="form__arrow"></div>
+                </div>
+              </div>
+              <label class="form__btn button" for="btnForm"><span>Order Now</span></label>
+              <button class="buttonOff" type="button" id="btnForm"></button>
+            </form>
           </div>
         </div>
       </div>
-      <div class="header__title row">
-        <div class="header__content col-10 offset-1">
-          <h1>
-            Lorem ipsum dolor sit amet, consectetur
-          </h1>
-        </div>
-        <div class="header__text col-10 offset-1">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad <span class="more">minim veniam, quis nostrud exercitation ullamco laboris
-              nisi
-              ut
-              aliquip ex
-              ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-              fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-              anim id est laborum.</span>
-          </p>
-          <label class="header__arrow" for="btn"><img class="" src="./img/down_section1.png" alt="More"></label>
-          <button class="header__btn" type="button" id="btn"></button>
-        </div>
-      </div>
-      <div class="header__form form row">
-        <h6 class="form__title">
-          Place your order
-        </h6>
-        <form class="form__body" action="#">
-          <input class="form__email" type="email" name="info[email]" placeholder="Enter your email">
-          <select class="form-control form-control-lg" form=#>
-            <option>Essay</option>
-            <option>Essay</option>
-            <option>Essay</option>
-          </select>
-          <select class="form-control form-control-lg" form=#>
-            <option>275</option>
-            <option>275</option>
-          </select>
-          <label class="form__btn" for="btnForm"><span>Order Now</span></label>
-          <button class="" type="button" id="btnForm"></button>
-        </form>
-      </div>
-    </div>
   </header>
 
   <section class="feedback justify-content-center text-center">
@@ -213,7 +235,7 @@
             <p class="slider__number"><span id="cp">1</span>/10</p>
           </div>
           <label class="slider__btnMore" for="btnCommentMore"><span>Add Testimonial</span></label>
-          <button type="button" id="btnCommentMore"></button>
+          <button class="buttonOff" type="button" id="btnCommentMore"></button>
         </div>
       </div>
     </div>

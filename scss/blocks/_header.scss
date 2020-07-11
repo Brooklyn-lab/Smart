@@ -1,11 +1,26 @@
+.button {
+   max-width: 251px;
+   width: 100%;
+   background: #da6f5b;
+   border: 1px solid #da6f5b;
+   color: #fff;
+   border-radius: 3px;
+   padding: 10.5px;
+   margin-bottom: 0;
+   text-align: center;
+}
 .header {
    background: linear-gradient(180deg, rgba(58, 58, 58, 0.35) 0%, rgba(58, 58, 58, 1) 60%),
       url("../img/bacground.png") no-repeat center/cover;
    padding-bottom: 43px;
 
    &__navigation {
+   }
+
+   &__wrapper {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       padding: 17px 16px 0;
       position: relative;
    }
@@ -16,34 +31,37 @@
       padding: 0 15px 0 0;
 
       img {
-         max-width: 77px;
-         max-height: 23px;
+         min-width: 77px;
+         min-height: 23px;
+         max-width: 119px;
+         width: 100%;
+
+         @media screen and (max-width: 576px) {
+            width: 77px;
+            height: auto;
+         }
       }
    }
 
    &__burger {
       display: block;
       padding: 0 0 0 15px;
+      @media screen and (min-width: 768px) {
+         display: none;
+      }
    }
 
-   // &__owerlay {
-   //    display: block;
-   //    position: fixed;
-   //    top: 0;
-   //    left: 0;
-   //    width: 100vh;
-   //    height: 100vh;
-   //    z-index: 10;
-   //    &.active {
-   //       display: block;
-   //    }
-   // }
+   &__nav {
+      @media screen and (max-width: 768px) {
+         display: none;
+      }
+   }
 
    &__button {
       display: flex;
       align-items: center;
       position: absolute;
-      top: 7px;
+      top: -7px;
       right: 0px;
       width: 23px;
       height: 12px;
@@ -53,7 +71,7 @@
    }
 
    &__title {
-      margin-top: 42px;
+      margin: 42px auto 0;
    }
 
    &__content {
@@ -69,9 +87,12 @@
 
    &__text {
       min-width: 272px;
+      max-width: 492px;
+      width: 100%;
       height: auto;
       padding: 0;
-      margin-top: 26px;
+      margin: 26px auto 0;
+      text-align: center;
 
       p {
          @include adaptive-font(18, 16, 400);
@@ -88,12 +109,64 @@
          max-height: 23px;
       }
    }
+
+   &__form {
+      margin: 0 auto;
+   }
+
+   &__btn {
+      max-width: 200px;
+      width: 100%;
+
+      @media screen and (max-width: 768px) {
+         display: none;
+      }
+   }
 }
-button {
+.nav {
+   padding-left: 35px;
+
+   &__body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 0;
+   }
+
+   &__item {
+      &:nth-child(2) {
+         margin: 0 60px 0 54px;
+      }
+   }
+
+   &__link {
+      text-decoration: none;
+      color: #fff;
+      font-size: 18px;
+      padding: 5px 10px;
+      background: transparent;
+      transition: 0.5s;
+      &:hover {
+         text-decoration: none;
+         color: #fff;
+      }
+   }
+}
+.activeLink {
+   background: #2d2d35;
+}
+.buttonOff {
    display: none;
 }
 .more {
    display: none;
+   min-width: 272px;
+   max-width: 492px;
+   width: 100%;
+   height: auto;
+   padding: 0;
+   margin: 0 auto;
+   text-align: center;
 }
 .active {
    display: block;
@@ -130,17 +203,19 @@ button {
    content: "";
    top: 5px;
 }
+
+//------------Form-------------------
+
 .form {
    border-radius: 5px;
-   background-color: #000;
-   margin: 0 auto;
+   background: rgba(0, 0, 0, 0.5);
+   display: flex;
+   flex-direction: column;
    justify-content: center;
    align-items: center;
    padding: 28px 18px 30px;
 
-   &__title {
-      font-family: "Playfair Display", sans-serif;
-      @include adaptive-font(24, 16, 400);
+   &__wrapper {
    }
 
    &__body {
@@ -148,59 +223,87 @@ button {
       width: 100%;
    }
 
-   &__email {
-      margin-top: 14px;
+   &__title {
+      font-family: "Playfair Display", sans-serif;
+      @include adaptive-font(24, 16, 400);
    }
 
-   &__btn {
-      max-width: 251px;
+   &__inputs {
       width: 100%;
-      background: #da6f5b;
-      border: 1px solid #da6f5b;
-      color: #fff;
+      margin: 14px 0 17px;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+   }
+
+   &__email {
+      max-width: 324px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      border: 0;
       border-radius: 3px;
-      padding: 10.5px;
-      margin-bottom: 0;
+      padding: 11px 10px 10px 21px;
+      &:focus {
+         outline: none;
+      }
+      &::placeholder {
+         color: #fff;
+         line-height: 36px;
+      }
    }
-}
-input {
-   margin-bottom: 17px;
-   min-width: 252px;
-   max-width: 324px;
-   width: 100%;
-   background: #454545;
-   border: 1px solid #454545;
-   border-radius: 3px;
-   padding: 11px 10px 10px 21px;
-   &:focus {
-      outline: none;
+
+   &__select {
+      position: relative;
+      max-width: 324px;
+      width: 100%;
+      display: inline-block;
+      margin-top: 17px;
+
+      select {
+         width: 100%;
+         display: inline-block;
+         cursor: pointer;
+         padding: 10px 33px 10px 21px;
+         outline: 0;
+         border: 0;
+         border-radius: 3px;
+         background: rgba(255, 255, 255, 0.2);
+         color: #fff;
+         appearance: none;
+         -webkit-appearance: none;
+         -moz-appearance: none;
+         z-index: 5;
+         &::-ms-expand {
+            display: none;
+         }
+         &:hover,
+         &:focus {
+            color: #000;
+            background: #fff;
+         }
+         &:disabled {
+            opacity: 0.5;
+            pointer-events: none;
+         }
+         &:hover ~ .form__arrow,
+         &:focus ~ .form__arrow {
+            border-top-color: #000;
+         }
+         &:disabled ~ .form__arrow {
+            border-top-color: #ccc;
+         }
+      }
    }
-   &::placeholder {
-      color: #fff;
-      line-height: 36px;
-   }
-}
-.form-control {
-   margin-bottom: 17px;
-   min-width: 252px;
-   max-width: 324px;
-   width: 100%;
-   color: #fff;
-   background: #454545;
-   border: 1px solid #454545;
-   border-radius: 3px;
-   padding: 10px 10px 10px 21px;
-   @include adaptive-font(24, 16, 400);
-   line-height: 24px;
-   &::placeholder {
-      background: #454545;
-   }
-}
-select {
-   option {
-      color: #fff;
-      background: #454545;
-      @include adaptive-font(24, 16, 400);
-      line-height: 24px;
+
+   &__arrow {
+      position: absolute;
+      top: 20px;
+      right: 15px;
+      width: 0;
+      height: 0;
+      pointer-events: none;
+      border-style: solid;
+      border-width: 4px 4px 0 4px;
+      border-color: #fff transparent transparent transparent;
    }
 }
