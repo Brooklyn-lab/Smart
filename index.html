@@ -20,12 +20,22 @@
           <div class="header__logo">
             <img src="./img/logo_nav.png" alt="Smart">
           </div>
+
           <div class="header__burger col-2">
-            <div class="header__owerlay"></div>
             <div class="header__button">
               <span></span>
             </div>
           </div>
+          <div class="header__menu burger__menu">
+            <ul class="burger__menu__body">
+              <li><label class="burger__menu__btn button" for="btnForm"><span>Order Now</span></label>
+                <button class="buttonOff" type="button" id="btnForm"></button></li>
+              <li class="burger__menu__item"><a class="burger__menu__link" href="#">Home</a></li>
+              <li class="burger__menu__item"><a class="burger__menu__link" href="#">About Us</a></li>
+              <li class="burger__menu__item"><a class="burger__menu__link" href="#">Blog</a></li>
+            </ul>
+          </div>
+
           <nav class="header__nav nav">
             <ul class="nav__body">
               <li class="nav__item"><a class="nav__link activeLink" href="#" :active>Home</a></li>
@@ -92,152 +102,168 @@
       </div>
   </header>
 
-  <section class="feedback justify-content-center text-center">
-    <div class="container">
-      <div class="row">
-        <h2 class="feedback__title col-12">
-          Testimonials
-        </h2>
-        <div class="slider col-12">
-          <div class="slider__items">
-            <div class="slider__text">
-              <p>
-                When I was stuck with my essay writing and thought that there is no way out, you guys appeared out of
-                the
-                blue! Your writing team deserves appreciation. I cannot imagine my student life without your competent
-                assistance. Thank you!
-              </p>
-            </div>
-            <p class="slider__name">
-              Andrey L.
-            </p>
-          </div>
-          <div class="slider__items">
-            <div class="slider__text">
-              <p>
-                I have tried a lot of online writing services and I stopped by this website, because the quality of
-                the
-                papers written here was above average. Moreover, they have affordable prices and good discounts for
-                customers. I highly recommend you to try this service and you will not be disappointed.
-              </p>
-            </div>
-            <p class="slider__name">
-              Doris L.
-            </p>
-          </div>
-          <div class="slider__items">
-            <div class="slider__text">
-              <p>
-                I am a returning customer of this online writing service. I have been using this site from High school
-                and I must admit that my writer has never let me down. Moreover, I have always received a good grade
-                on
-                all papers ordered hereou!
-              </p>
-            </div>
-            <p class="slider__name">
-              Kristy T.
-            </p>
-          </div>
-          <div class="slider__items">
-            <div class="slider__text">
-              <p>
-                When I was stuck with my essay writing and thought that there is no way out, you guys appeared out of
-                the
-                blue! Your writing team deserves appreciation. I cannot imagine my student life without your competent
-                assistance. Thank you!
-              </p>
-            </div>
-            <p class="slider__name">
-              Andrey L.
-            </p>
-          </div>
-          <div class="slider__items">
-            <div class="slider__text">
-              <p>
-                I have tried a lot of online writing services and I stopped by this website, because the quality of
-                the
-                papers written here was above average. Moreover, they have affordable prices and good discounts for
-                customers. I highly recommend you to try this service and you will not be disappointed.
-              </p>
-            </div>
-            <p class="slider__name">
-              Doris L.
-            </p>
-          </div>
-          <div class="slider__items">
-            <div class="slider__text">
-              <p>
-                I am a returning customer of this online writing service. I have been using this site from High school
-                and I must admit that my writer has never let me down. Moreover, I have always received a good grade
-                on
-                all papers ordered hereou!
-              </p>
-            </div>
-            <p class="slider__name">
-              Kristy T.
-            </p>
-          </div>
-          <div class="slider__items">
-            <div class="slider__text">
-              <p>
-                When I was stuck with my essay writing and thought that there is no way out, you guys appeared out of
-                the
-                blue! Your writing team deserves appreciation. I cannot imagine my student life without your competent
-                assistance. Thank you!
-              </p>
-            </div>
-            <p class="slider__name">
-              Andrey L.
-            </p>
-          </div>
-          <div class="slider__items">
-            <div class="slider__text">
-              <p>
-                I have tried a lot of online writing services and I stopped by this website, because the quality of
-                the
-                papers written here was above average. Moreover, they have affordable prices and good discounts for
-                customers. I highly recommend you to try this service and you will not be disappointed.
-              </p>
-            </div>
-            <p class="slider__name">
-              Doris L.
-            </p>
-          </div>
-          <div class="slider__items">
-            <div class="slider__text">
-              <p>
-                I am a returning customer of this online writing service. I have been using this site from High school
-                and I must admit that my writer has never let me down. Moreover, I have always received a good grade
-                on
-                all papers ordered hereou!
-              </p>
-            </div>
-            <p class="slider__name">
-              Kristy T.
-            </p>
-          </div>
-          <div class="slider__items">
-            <div class="slider__text">
-              <p>
-                When I was stuck with my essay writing and thought that there is no way out, you guys appeared out of
-                the
-                blue! Your writing team deserves appreciation. I cannot imagine my student life without your competent
-                assistance. Thank you!
-              </p>
-            </div>
-            <p class="slider__name">
-              Andrey L.
-            </p>
-          </div>
+  <section class="feedback">
+    <h2 class="feedback__title">
+      Testimonials
+    </h2>
+    <div class="feedback__slider slider">
+      <div class="slider__item">
+        <div class="slider__text">
+          <p>
+            When I was stuck with my essay writing and thought that there is no way out, you guys appeared out of
+            the
+            blue! Your writing team deserves appreciation. I cannot imagine my student life without your competent
+            assistance. Thank you!
+          </p>
         </div>
-        <div class="comment__more col-12">
-          <div>
-            <p class="slider__number"><span id="cp">1</span>/10</p>
-          </div>
-          <label class="slider__btnMore" for="btnCommentMore"><span>Add Testimonial</span></label>
-          <button class="buttonOff" type="button" id="btnCommentMore"></button>
+        <div class="slider__name">
+          <p>
+            Andrey L.
+          </p>
         </div>
       </div>
+      <div class="slider__item">
+        <div class="slider__text">
+          <p>
+            I am a returning customer of this online writing service. I have been using this site from High school
+            and I must admit that my writer has never let me down. Moreover, I have always received a good grade
+            on
+            all papers ordered hereou!
+          </p>
+        </div>
+        <div class="slider__name">
+          <p>
+            Kristy T.
+          </p>
+        </div>
+      </div>
+      <div class="slider__item">
+        <div class="slider__text">
+          <p>
+            I have tried a lot of online writing services and I stopped by this website, because the quality of
+            the
+            papers written here was above average. Moreover, they have affordable prices and good discounts for
+            customers. I highly recommend you to try this service and you will not be disappointed.
+          </p>
+        </div>
+        <div class="slider__name">
+          <p>
+            Doris L.
+          </p>
+        </div>
+      </div>
+      <div class="slider__item">
+        <div class="slider__text">
+          <p>
+            When I was stuck with my essay writing and thought that there is no way out, you guys appeared out of
+            the
+            blue! Your writing team deserves appreciation. I cannot imagine my student life without your competent
+            assistance. Thank you!
+          </p>
+        </div>
+        <div class="slider__name">
+          <p>
+            Andrey L.
+          </p>
+        </div>
+      </div>
+      <div class="slider__item">
+        <div class="slider__text">
+          <p>
+            I am a returning customer of this online writing service. I have been using this site from High school
+            and I must admit that my writer has never let me down. Moreover, I have always received a good grade
+            on
+            all papers ordered hereou!
+          </p>
+        </div>
+        <div class="slider__name">
+          <p>
+            Kristy T.
+          </p>
+        </div>
+      </div>
+      <div class="slider__item">
+        <div class="slider__text">
+          <p>
+            I have tried a lot of online writing services and I stopped by this website, because the quality of
+            the
+            papers written here was above average. Moreover, they have affordable prices and good discounts for
+            customers. I highly recommend you to try this service and you will not be disappointed.
+          </p>
+        </div>
+        <div class="slider__name">
+          <p>
+            Doris L.
+          </p>
+        </div>
+      </div>
+      <div class="slider__item">
+        <div class="slider__text">
+          <p>
+            When I was stuck with my essay writing and thought that there is no way out, you guys appeared out of
+            the
+            blue! Your writing team deserves appreciation. I cannot imagine my student life without your competent
+            assistance. Thank you!
+          </p>
+        </div>
+        <div class="slider__name">
+          <p>
+            Andrey L.
+          </p>
+        </div>
+      </div>
+      <div class="slider__item">
+        <div class="slider__text">
+          <p>
+            I am a returning customer of this online writing service. I have been using this site from High school
+            and I must admit that my writer has never let me down. Moreover, I have always received a good grade
+            on
+            all papers ordered hereou!
+          </p>
+        </div>
+        <div class="slider__name">
+          <p>
+            Kristy T.
+          </p>
+        </div>
+      </div>
+      <div class="slider__item">
+        <div class="slider__text">
+          <p>
+            I have tried a lot of online writing services and I stopped by this website, because the quality of
+            the
+            papers written here was above average. Moreover, they have affordable prices and good discounts for
+            customers. I highly recommend you to try this service and you will not be disappointed.
+          </p>
+        </div>
+        <div class="slider__name">
+          <p>
+            Doris L.
+          </p>
+        </div>
+      </div>
+      <div class="slider__item">
+        <div class="slider__text">
+          <p>
+            When I was stuck with my essay writing and thought that there is no way out, you guys appeared out of
+            the
+            blue! Your writing team deserves appreciation. I cannot imagine my student life without your competent
+            assistance. Thank you!
+          </p>
+        </div>
+        <div class="slider__name">
+          <p>
+            Andrey L.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="feedback__more footer col-12 col-md-8 offset-md-2">
+      <div>
+        <p class="footer__number"><span id="cp">1</span>/10</p>
+      </div>
+      <label class="footer__btnMore" for="btnfeedbackMore"><span>Add Testimonial</span></label>
+      <button class="buttonOff" type="button" id="btnfeedbackMore"></button>
     </div>
   </section>
 

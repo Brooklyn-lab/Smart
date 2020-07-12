@@ -8,14 +8,16 @@
    padding: 10.5px;
    margin-bottom: 0;
    text-align: center;
+   transition: 0.3s;
+   &:hover {
+      background: transparent;
+      color: #da6f5b;
+   }
 }
 .header {
    background: linear-gradient(180deg, rgba(58, 58, 58, 0.35) 0%, rgba(58, 58, 58, 1) 60%),
       url("../img/bacground.png") no-repeat center/cover;
    padding-bottom: 43px;
-
-   &__navigation {
-   }
 
    &__wrapper {
       display: flex;
@@ -29,30 +31,29 @@
       display: flex;
       align-items: center;
       padding: 0 15px 0 0;
+      z-index: 500;
 
       img {
-         min-width: 77px;
-         min-height: 23px;
-         max-width: 119px;
+         max-width: 77px;
+         height: auto;
          width: 100%;
 
-         @media screen and (max-width: 576px) {
-            width: 77px;
-            height: auto;
+         @media screen and (min-width: 576px) {
+            min-width: 77px;
+            min-height: 23px;
+            max-width: 119px;
          }
       }
    }
 
+   //---------Burger button-----------
+
    &__burger {
       display: block;
       padding: 0 0 0 15px;
-      @media screen and (min-width: 768px) {
-         display: none;
-      }
-   }
+      z-index: 500;
 
-   &__nav {
-      @media screen and (max-width: 768px) {
+      @media screen and (min-width: 768px) {
          display: none;
       }
    }
@@ -69,6 +70,41 @@
       z-index: 20;
       padding: 0;
    }
+
+   &__button.active > span {
+      transform: rotate(45deg);
+   }
+
+   &__button.active > span::before {
+      top: 0;
+      transform: rotate(0);
+   }
+
+   &__button.active > span::after {
+      top: 0;
+      transform: rotate(90deg);
+   }
+
+   &__button > span,
+   &__button > span::before,
+   &__button > span::after {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: #fff;
+      transition-duration: 0.25s;
+   }
+   &__button > span::before {
+      content: "";
+      top: -5px;
+   }
+   &__button > span::after {
+      content: "";
+      top: 5px;
+   }
+
+   //---------Сontent part----------------
 
    &__title {
       margin: 42px auto 0;
@@ -97,7 +133,6 @@
       p {
          @include adaptive-font(18, 16, 400);
          line-height: 24px;
-         margin: 0;
       }
    }
 
@@ -112,30 +147,112 @@
 
    &__form {
       margin: 0 auto;
+      width: 100%;
+      padding: 0 15px;
    }
 
    &__btn {
-      max-width: 200px;
+      max-width: 150px;
       width: 100%;
 
       @media screen and (max-width: 768px) {
          display: none;
       }
+
+      @media screen and (min-width: 992px) {
+         max-width: 200px;
+      }
    }
 }
+
+//---------Burger menu-----------
+
+.burger__menu {
+   display: block;
+   position: fixed;
+   visibility: hidden;
+   left: 0;
+   top: -100%;
+   width: 100%;
+   height: 100%;
+   margin: 0;
+   padding: 98px 0;
+   list-style: none;
+   background: #2d2d35;
+   transition-duration: 0.5s;
+   &.active {
+      visibility: visible;
+      top: 0;
+      z-index: 100;
+      transition-duration: 0.5s;
+   }
+   a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 30px;
+   }
+
+   &__link {
+      position: relative;
+      text-transform: uppercase;
+      transition-duration: 0.25s;
+      &:after {
+         content: "";
+         display: block;
+         position: absolute;
+         left: 0;
+         width: 0;
+         height: 2px;
+         background: #fff;
+         transition: width 0.3s ease-out;
+      }
+
+      &:hover:after,
+      &:focus:after {
+         width: 100%;
+      }
+   }
+
+   &__item {
+      margin-bottom: 30px;
+   }
+
+   &__btn {
+      margin-bottom: 62px;
+   }
+}
+
+//----------Navigation header over 768px----------------
+
 .nav {
-   padding-left: 35px;
+   @media screen and (max-width: 768px) {
+      display: none;
+   }
+
+   @media screen and (min-width: 992px) {
+      margin-left: 35px;
+   }
 
    &__body {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
       margin-bottom: 0;
    }
 
    &__item {
-      &:nth-child(2) {
-         margin: 0 60px 0 54px;
+      @media screen and (min-width: 768px) {
+         &:nth-child(2) {
+            margin: 0 15px;
+         }
+      }
+
+      @media screen and (min-width: 992px) {
+         &:nth-child(2) {
+            margin: 0 60px 0 54px;
+         }
       }
    }
 
@@ -146,6 +263,7 @@
       padding: 5px 10px;
       background: transparent;
       transition: 0.5s;
+      position: relative;
       &:hover {
          text-decoration: none;
          color: #fff;
@@ -155,53 +273,20 @@
 .activeLink {
    background: #2d2d35;
 }
+
 .buttonOff {
    display: none;
 }
 .more {
    display: none;
-   min-width: 272px;
-   max-width: 492px;
-   width: 100%;
-   height: auto;
-   padding: 0;
-   margin: 0 auto;
-   text-align: center;
 }
 .active {
    display: block;
+   top: 0;
+
    img {
       transform: rotate(180deg);
    }
-}
-.header__button.active > span {
-   transform: rotate(45deg);
-}
-.header__button.active > span::before {
-   top: 0;
-   transform: rotate(0);
-}
-.header__button.active > span::after {
-   top: 0;
-   transform: rotate(90deg);
-}
-.header__button > span,
-.header__button > span::before,
-.header__button > span::after {
-   display: block;
-   position: absolute;
-   width: 100%;
-   height: 2px;
-   background-color: #fff;
-   transition-duration: 0.25s;
-}
-.header__button > span::before {
-   content: "";
-   top: -5px;
-}
-.header__button > span::after {
-   content: "";
-   top: 5px;
 }
 
 //------------Form-------------------
@@ -212,11 +297,9 @@
    display: flex;
    flex-direction: column;
    justify-content: center;
+   text-align: center;
    align-items: center;
    padding: 28px 18px 30px;
-
-   &__wrapper {
-   }
 
    &__body {
       min-width: 252px;
@@ -234,6 +317,15 @@
       align-items: center;
       display: flex;
       flex-direction: column;
+
+      @media screen and (min-width: 768px) {
+         flex-direction: row;
+         justify-content: space-between;
+      }
+
+      @media screen and (min-width: 992px) {
+         margin: 18px 0 24px;
+      }
    }
 
    &__email {
@@ -258,6 +350,13 @@
       width: 100%;
       display: inline-block;
       margin-top: 17px;
+
+      @media screen and (min-width: 768px) {
+         margin: 0 10px;
+         &:last-child {
+            margin: 0;
+         }
+      }
 
       select {
          width: 100%;
