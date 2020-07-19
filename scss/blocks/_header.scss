@@ -140,6 +140,7 @@
    }
 
    &__arrow {
+      display: block;
       margin: 14px 0;
 
       img {
@@ -281,6 +282,9 @@
 }
 .more {
    display: none;
+}
+.activeMore {
+   display: inline;
 }
 .active {
    display: block;

@@ -18,7 +18,7 @@ $(document).ready(function () {
    let btn = $(".header__arrow");
 
    $(btn).on("click", function () {
-      textMore.toggleClass("active");
+      textMore.toggleClass("activeMore");
       $(this).toggleClass("active");
    });
 
