@@ -15,9 +15,12 @@
    }
 }
 .header {
-   background: url("../img/bacground.png") no-repeat center/cover,
-      linear-gradient(90deg, rgba(58, 58, 58, 58) 0%, rgba(58, 58, 58, 58) 52%);
+   background: url("../img/bg-mobile2.png") no-repeat center/cover;
    padding-bottom: 43px;
+
+   @media screen and (min-width: 768px) {
+      background: url("../img/bacground2.png") no-repeat center/cover;
+   }
 
    &__wrapper {
       display: flex;
@@ -292,13 +295,13 @@
 
 .form {
    border-radius: 5px;
-   background: rgba(0, 0, 0, 0.5);
+   background: rgba(0, 0, 0, 0.7);
    display: flex;
    flex-direction: column;
    justify-content: center;
    text-align: center;
    align-items: center;
-   padding: 28px 18px 30px;
+   padding: 28px 43px 30px;
 
    &__body {
       min-width: 252px;
@@ -327,35 +330,15 @@
       }
    }
 
+   &__topic {
+      @media screen and (max-width: 768px) {
+         display: none;
+      }
+   }
+
    &__email {
-      max-width: 324px;
-      width: 100%;
-      background: rgba(255, 255, 255, 0.2);
-      border: 0;
-      border-radius: 3px;
-      padding: 11px 10px 10px 21px;
-      &:focus {
-         outline: none;
-      }
-      &::-webkit-input-placeholder {
-         color: #fff;
-         line-height: 36px;
-      }
-      &::-moz-placeholder {
-         color: #fff;
-         line-height: 36px;
-      }
-      &:-ms-input-placeholder {
-         color: #fff;
-         line-height: 36px;
-      }
-      &::-ms-input-placeholder {
-         color: #fff;
-         line-height: 36px;
-      }
-      &::placeholder {
-         color: #fff;
-         line-height: 36px;
+      @media screen and (min-width: 768px) {
+         display: none;
       }
    }
 
@@ -419,5 +402,36 @@
       border-style: solid;
       border-width: 4px 4px 0 4px;
       border-color: #fff transparent transparent transparent;
+   }
+}
+.input {
+   max-width: 324px;
+   width: 100%;
+   background: rgba(255, 255, 255, 0.2);
+   border: 0;
+   border-radius: 3px;
+   padding: 11px 10px 10px 21px;
+   &:focus {
+      outline: none;
+   }
+   &::-webkit-input-placeholder {
+      color: #fff;
+      line-height: 36px;
+   }
+   &::-moz-placeholder {
+      color: #fff;
+      line-height: 36px;
+   }
+   &:-ms-input-placeholder {
+      color: #fff;
+      line-height: 36px;
+   }
+   &::-ms-input-placeholder {
+      color: #fff;
+      line-height: 36px;
+   }
+   &::placeholder {
+      color: #fff;
+      line-height: 36px;
    }
 }
